@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-14T14:16:06.309Z",
+  "entries": {
+    "memory:memory/2026-05-12.md:1:10": {
+      "key": "memory:memory/2026-05-12.md:1:10",
+      "path": "memory/2026-05-12.md",
+      "startLine": 1,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "# 2026-05-12 - Daily Log ## Cron: backup-projects.sh **Status:** FAILED - Script not found **Time:** 2026-05-12 00:02 UTC **Error:** `/home/kodaagentmt/.openclaw/workspace/backup-projects.sh` does not exist The cron job attempted to run `backup-projects.sh` but the file was not found in the workspace directory.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "queryHashes": [
+        "3664000a1798"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "home/kodaagentmt",
+        "log",
+        "cron",
+        "projects.sh",
+        "status",
+        "failed"
+      ]
+    },
+    "memory:memory/2026-05-11.md:1:2": {
+      "key": "memory:memory/2026-05-11.md:1:2",
+      "path": "memory/2026-05-11.md",
+      "startLine": 1,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "[2026-05-11 00:03 MDT] BACKUP CRON ERROR: /home/kodaagentmt/.openclaw/workspace/backup-projects.sh not found",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6417662670493736,
+      "maxScore": 0.6417662670493736,
+      "firstRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "queryHashes": [
+        "3664000a1798"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "backup",
+        "home/kodaagentmt",
+        "mdt",
+        "cron",
+        "error",
+        "home",
+        "kodaagentmt",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-05-13.md:1:8": {
+      "key": "memory:memory/2026-05-13.md:1:8",
+      "path": "memory/2026-05-13.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "## Cron: backup-projects.sh — 2026-05-13 00:03 MDT **Status:** FAILED **Error:** Script not found at `/home/kodaagentmt/.openclaw/workspace/backup-projects.sh` **Exit code:** 127",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6383347630167586,
+      "maxScore": 0.6383347630167586,
+      "firstRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "queryHashes": [
+        "3664000a1798"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "home/kodaagentmt",
+        "cron",
+        "projects.sh",
+        "mdt",
+        "status",
+        "failed"
+      ]
+    },
+    "memory:memory/2026-05-14.md:1:8": {
+      "key": "memory:memory/2026-05-14.md:1:8",
+      "path": "memory/2026-05-14.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "## Cron: backup-projects.sh — 2026-05-14 00:04 **Status:** FAILED — Script not found **Path attempted:** `/home/kodaagentmt/.openclaw/workspace/backup-projects.sh` **Error:** `No such file or directory`",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6376937111095778,
+      "maxScore": 0.6376937111095778,
+      "firstRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "queryHashes": [
+        "3664000a1798"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "home/kodaagentmt",
+        "cron",
+        "projects.sh",
+        "status",
+        "failed",
+        "script"
+      ]
+    },
+    "memory:memory/2026-05-14.md:1:40": {
+      "key": "memory:memory/2026-05-14.md:1:40",
+      "path": "memory/2026-05-14.md",
+      "startLine": 1,
+      "endLine": 40,
+      "source": "memory",
+      "snippet": "# 2026-05-14 - Daily Log ## Photo Library & Engagement Questions Build **Context:** KC audio recap — we need photo collections for Tight Lines Tackle Box and Camp Cook Kitchens to use in Buffer posts. Engagement questions at noon will be posted as an image with the question as primary text (not embedded in image, just image + text caption). **Photo library priorities:** - Morning posts: need landscape/nature photos (fishing, camping, hunting scenes) - Afternoon posts: need photos matching the content (gear for TL, recipes/cooking for CCK) - Midday engagement: branded image + question as caption in post text ## Backup Script Fixed `backup-projects.sh` was missing. Created it — backs up:",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-14T14:16:06.309Z",
+      "lastRecalledAt": "2026-05-14T14:16:06.309Z",
+      "queryHashes": [
+        "8bbb08034391"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "backup",
+        "landscape/nature",
+        "recipes/cooking",
+        "backup-projects.sh",
+        "log",
+        "photo",
+        "library",
+        "engagement"
+      ]
+    },
+    "memory:memory/2026-05-14.md:30:45": {
+      "key": "memory:memory/2026-05-14.md:30:45",
+      "path": "memory/2026-05-14.md",
+      "startLine": 30,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "| camp-cook-afternoon | 3:15 PM | ✅ — needs photo-library.json built | | backup-projects.sh | Midnight | ✅ fixed | | workspace git backup | Midnight | ✅ | ## Photo Library Files to Build - `/workspace/tight-lines/content/photo-library.json` — expand to 15-20 per category - `/workspace/camp-cook-kitchens/content/photo-library.json` — create from scratch ## Engagement Questions Plan Both noon posts use branded template images + question text in the post body (caption). Questions should be conversational, specific to each brand's niche. --- ## Running: Photo Library Build",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8854020874230633,
+      "maxScore": 0.8854020874230633,
+      "firstRecalledAt": "2026-05-14T14:16:06.309Z",
+      "lastRecalledAt": "2026-05-14T14:16:06.309Z",
+      "queryHashes": [
+        "8bbb08034391"
+      ],
+      "recallDays": [
+        "2026-05-14"
+      ],
+      "conceptTags": [
+        "backup",
+        "camp-cook-afternoon",
+        "photo-library.json",
+        "backup-projects.sh",
+        "15-20",
+        "camp",
+        "cook",
+        "afternoon"
+      ]
+    }
+  }
+}
