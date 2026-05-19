@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-14T14:16:06.309Z",
+  "updatedAt": "2026-05-19T01:11:08.046Z",
   "entries": {
     "memory:memory/2026-05-12.md:1:10": {
       "key": "memory:memory/2026-05-12.md:1:10",
@@ -9,18 +9,20 @@
       "endLine": 10,
       "source": "memory",
       "snippet": "# 2026-05-12 - Daily Log ## Cron: backup-projects.sh **Status:** FAILED - Script not found **Time:** 2026-05-12 00:02 UTC **Error:** `/home/kodaagentmt/.openclaw/workspace/backup-projects.sh` does not exist The cron job attempted to run `backup-projects.sh` but the file was not found in the workspace directory.",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 1.6357158053352103,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-14T13:28:42.425Z",
-      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-19T01:11:08.046Z",
       "queryHashes": [
-        "3664000a1798"
+        "3664000a1798",
+        "c1ac82af30d8"
       ],
       "recallDays": [
-        "2026-05-14"
+        "2026-05-14",
+        "2026-05-18"
       ],
       "conceptTags": [
         "backup",
@@ -40,18 +42,20 @@
       "endLine": 2,
       "source": "memory",
       "snippet": "[2026-05-11 00:03 MDT] BACKUP CRON ERROR: /home/kodaagentmt/.openclaw/workspace/backup-projects.sh not found",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.6417662670493736,
+      "totalScore": 1.2835322917310772,
       "maxScore": 0.6417662670493736,
       "firstRecalledAt": "2026-05-14T13:28:42.425Z",
-      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-19T01:11:08.046Z",
       "queryHashes": [
-        "3664000a1798"
+        "3664000a1798",
+        "c1ac82af30d8"
       ],
       "recallDays": [
-        "2026-05-14"
+        "2026-05-14",
+        "2026-05-18"
       ],
       "conceptTags": [
         "backup",
@@ -71,18 +75,20 @@
       "endLine": 8,
       "source": "memory",
       "snippet": "## Cron: backup-projects.sh — 2026-05-13 00:03 MDT **Status:** FAILED **Error:** Script not found at `/home/kodaagentmt/.openclaw/workspace/backup-projects.sh` **Exit code:** 127",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.6383347630167586,
-      "maxScore": 0.6383347630167586,
+      "totalScore": 1.2766696389771943,
+      "maxScore": 0.6383348759604358,
       "firstRecalledAt": "2026-05-14T13:28:42.425Z",
-      "lastRecalledAt": "2026-05-14T13:28:42.425Z",
+      "lastRecalledAt": "2026-05-19T01:11:08.046Z",
       "queryHashes": [
-        "3664000a1798"
+        "3664000a1798",
+        "c1ac82af30d8"
       ],
       "recallDays": [
-        "2026-05-14"
+        "2026-05-14",
+        "2026-05-18"
       ],
       "conceptTags": [
         "backup",
@@ -186,6 +192,99 @@
         "camp",
         "cook",
         "afternoon"
+      ]
+    },
+    "memory:memory/2026-05-14.md:1:12": {
+      "key": "memory:memory/2026-05-14.md:1:12",
+      "path": "memory/2026-05-14.md",
+      "startLine": 1,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "# 2026-05-14 ## Morning Post Attempt - Cron fired at ~8:15 AM for \"tight-lines-morning\" - Found `2026-05-14-morning.md` already existed (created 7:54 AM — duplicate run) - Buffer plugin not configured in OpenClaw — cannot push directly to Buffer - Notified KC via Telegram about both issues ## Action Items - Need Buffer API credentials/config to push posts directly - Check why cron fired twice (duplicate trigger)",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-19T01:11:08.046Z",
+      "lastRecalledAt": "2026-05-19T01:11:08.046Z",
+      "queryHashes": [
+        "c1ac82af30d8"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "tight-lines-morning",
+        "2026-05-14-morning.md",
+        "credentials/config",
+        "morning",
+        "post",
+        "attempt",
+        "cron",
+        "fired"
+      ]
+    },
+    "memory:memory/2026-05-16.md:1:8": {
+      "key": "memory:memory/2026-05-16.md:1:8",
+      "path": "memory/2026-05-16.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "# 2026-05-16 ## Midnight Backup (00:04) - `backup-projects.sh` ran successfully - Git operations completed cleanly for both `koda-portfolio` (master + gh-pages) and second remote - No errors",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6374085821633089,
+      "maxScore": 0.6374085821633089,
+      "firstRecalledAt": "2026-05-19T01:11:08.046Z",
+      "lastRecalledAt": "2026-05-19T01:11:08.046Z",
+      "queryHashes": [
+        "c1ac82af30d8"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "koda-portfolio",
+        "gh-pages",
+        "midnight",
+        "projects.sh",
+        "ran",
+        "successfully"
+      ]
+    },
+    "memory:memory/2026-05-15.md:1:11": {
+      "key": "memory:memory/2026-05-15.md:1:11",
+      "path": "memory/2026-05-15.md",
+      "startLine": 1,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "## Cron: backup-projects.sh — 2026-05-15 00:03 MDT To https://github.com/kodaagentmt-max/koda-portfolio.git 170aaa5..4487cc4 master -> master branch 'master' set up to track 'origin/master'. **Status:** OK Everything up-to-date **tightlines-blog: OK** Everything up-to-date **tag-soup-blog: OK** Backup complete at Fri May 15 00:03:20 MDT 2026",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6350008776057575,
+      "maxScore": 0.6350008776057575,
+      "firstRecalledAt": "2026-05-19T01:11:08.046Z",
+      "lastRecalledAt": "2026-05-19T01:11:08.046Z",
+      "queryHashes": [
+        "c1ac82af30d8"
+      ],
+      "recallDays": [
+        "2026-05-18"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "origin/master",
+        "up-to-date",
+        "tightlines-blog",
+        "tag-soup-blog",
+        "cron",
+        "projects.sh"
       ]
     }
   }
