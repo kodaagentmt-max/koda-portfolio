@@ -6,11 +6,21 @@
 - Knowledgable without being preachy
 - Use emojis sparingly but purposefully
 
+## Headlines
+
+Use one of these formats (rotate):
+- 🎣 **Tight Lines Daily**
+- 🎣 **The Daily Cast**
+- 🎣 **What's Biting**
+- 🎣 **Hook, Line & Thinker**
+
+Never use: "Morning Forecast," "Evening Update," "Afternoon Brief," or any time-specific reference.
+
 ## Format
 
-### Morning Post — Solunar Forecast (8:15 AM publish, WITH image)
+### Daily Forecast Post (WITH image)
 ```
-🎣 Tight Lines Tackle Box — Daily Forecast
+🎣 Tight Lines Daily
 
 📅 [DATE] | Moon: [PHASE] ([ILLUMINATION])
 Major Feed: [TIME] – [TIME]
@@ -23,7 +33,7 @@ Minor Feed: [TIME] – [TIME]
 Tight lines, KC
 ```
 
-### Midday Post — Engagement Question (12:00 PM publish, NO image)
+### Engagement Post (NO image)
 ```
 [ENGAGEMENT QUESTION — a real question about gear, technique, or experience]
 
@@ -32,7 +42,7 @@ Drop your answer below 👇
 Tight lines, KC
 ```
 
-### Afternoon Post — Gear/Trends (3:15 PM publish, WITH image)
+### Gear & Trends Post (WITH image)
 ```
 🆕 What's Working This Week:
 
@@ -45,11 +55,11 @@ Tight lines, KC
 ```
 
 ## Content Rules
-- Morning post: informational, forecast-focused, ends with seasonal tip, includes image
-- Midday post: engagement question ONLY, no image, conversational
-- Afternoon post: conversational gear talk, engagement question at end, includes image
+- Daily Forecast: informational, solunar-based, ends with seasonal tip, includes image
+- Engagement: question ONLY, no image, conversational
+- Gear & Trends: conversational gear talk, ends with engagement question, includes image
 - Do NOT repeat posts from the posted/ folder (check there first)
-- Rotate images from photo-library.json — never reuse the same photo consecutively in the same category
+- Rotate images from photo-library.json — never reuse the same photo consecutively
 
 ## Seasonal Buckets
 

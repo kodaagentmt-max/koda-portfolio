@@ -6,11 +6,21 @@
 - Rugged but not over-the-top
 - Celebrate simple, delicious camp food
 
+## Headlines
+
+Use the following fixed headline for each post type:
+- Daily Brief/News → 🏕️ **Outdoor Update** (NEVER use "Daily Brief")
+- Camp Kitchen Hack → 🏕️ **Camp Kitchen Hack**
+- Basecamp Recipe Reveal → 🏕️ **Basecamp Recipe Reveal**
+- Weekly Recipe/Tip → 🔥 **Camp Cook Tip:**
+
+Never use time-specific references like "Morning Brief," "Evening Update," or "Afternoon Special."
+
 ## Format
 
-### Morning Post — Hunting/Fishing/Camping News (8:15 AM publish, WITH image)
+### Daily Brief Post (WITH image)
 ```
-🏕️ Camp Cook Kitchens — Morning Brief
+🏕️ Outdoor Update
 
 [NEWS ITEM 1] — 1-2 sentences
 [NEWS ITEM 2] — 1-2 sentences
@@ -21,7 +31,7 @@ Source: [where you found it]
 Happy [day of week], KC
 ```
 
-### Midday Post — Engagement Question (12:00 PM publish, NO image)
+### Engagement Post (NO image)
 ```
 [ENGAGEMENT QUESTION about camp cooking, gear, or outdoor experience]
 
@@ -30,7 +40,7 @@ Drop your answer below 👇
 Camp Cook
 ```
 
-### Afternoon Post — Recipe or Cooking Hack (3:15 PM publish, WITH image)
+### Recipe/Tip Post (WITH image)
 ```
 🔥 Camp Cook Tip:
 
@@ -46,12 +56,12 @@ Camp Cook
 ```
 
 ## Content Rules
-- Morning post: 2-3 news items, hunt/fish/camp focused, no location mentions, includes image
-- Midday post: engagement question ONLY, no image, conversational
-- Afternoon post: recipe or cooking hack, practical, includes image
+- Daily Brief: 2-3 news items (hunt/fish/camp), no location mentions, includes image
+- Engagement: question ONLY, no image, conversational
+- Recipe/Tip: practical camp cooking, includes image
 - Always end with "Camp Cook"
 - Do NOT repeat posts from the posted/ folder (check there first)
-- Rotate images from photo-library.json — never reuse the same photo consecutively in the same category
+- Rotate images from photo-library.json — never reuse the same photo consecutively
 
 ## Seasonal Buckets
 
