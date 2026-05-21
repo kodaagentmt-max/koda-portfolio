@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-19T14:59:50.707Z",
+  "updatedAt": "2026-05-20T15:16:23.830Z",
   "entries": {
     "memory:memory/2026-05-12.md:1:10": {
       "key": "memory:memory/2026-05-12.md:1:10",
@@ -205,20 +205,22 @@
       "endLine": 12,
       "source": "memory",
       "snippet": "# 2026-05-14 ## Morning Post Attempt - Cron fired at ~8:15 AM for \"tight-lines-morning\" - Found `2026-05-14-morning.md` already existed (created 7:54 AM — duplicate run) - Buffer plugin not configured in OpenClaw — cannot push directly to Buffer - Notified KC via Telegram about both issues ## Action Items - Need Buffer API credentials/config to push posts directly - Check why cron fired twice (duplicate trigger)",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-19T01:11:08.046Z",
-      "lastRecalledAt": "2026-05-19T14:59:50.707Z",
+      "lastRecalledAt": "2026-05-20T15:16:23.830Z",
       "queryHashes": [
         "c1ac82af30d8",
-        "c21ee012eb2b"
+        "c21ee012eb2b",
+        "16c363377970"
       ],
       "recallDays": [
         "2026-05-18",
-        "2026-05-19"
+        "2026-05-19",
+        "2026-05-20"
       ],
       "conceptTags": [
         "tight-lines-morning",
@@ -326,6 +328,37 @@
         "tag-soup-blog",
         "cron",
         "projects.sh"
+      ]
+    },
+    "memory:memory/2026-05-20.md:1:16": {
+      "key": "memory:memory/2026-05-20.md:1:16",
+      "path": "memory/2026-05-20.md",
+      "startLine": 1,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "## Cron: backup-projects.sh — 2026-05-20 00:03 MDT To https://github.com/kodaagentmt-max/koda-portfolio.git dbc4669..2e21ae9 master -> master branch 'master' set up to track 'origin/master'. **Status:** OK Everything up-to-date **tightlines-blog: OK** Everything up-to-date **tag-soup-blog: OK** Backup complete at Wed May 20 00:03:16 MDT 2026 ## Backup Check (00:03 UTC) - **Status:** ✅ All repos up-to-date - **Repos:** koda-portfolio (master + gh-pages), camp-cook-kitchens, tight-lines-tackle-box - **Result:** nothing to commit, everything pushed successfully",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-20T15:16:23.830Z",
+      "lastRecalledAt": "2026-05-20T15:16:23.830Z",
+      "queryHashes": [
+        "16c363377970"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "origin/master",
+        "up-to-date",
+        "tightlines-blog",
+        "tag-soup-blog",
+        "koda-portfolio",
+        "gh-pages"
       ]
     }
   }
