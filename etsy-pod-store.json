@@ -1,0 +1,256 @@
+{
+  "niche": {
+    "chosen_niche": "Mountain Lake Lifestyle",
+    "why_this_niche": "Etsy search data shows outdoor lifestyle apparel has consistent demand with low saturation. 'Lake life' and fishing-themed designs rank well and are evergreen, not seasonal. Aligns with KC's existing Camp Cook Kitchens brand. No copyright risk since we use only original typography and illustrations — no copyrighted characters, brand names, or fan art.",
+    "target_audience": "Outdoor enthusiasts aged 28–55, skews Midwest/Mountain West. People who fish, camp, kayak, and spend time at lakes. They buy gifts for themselves and others. They respond to authentic, low-key branding — not corporate or preachy.",
+    "risk_notes": [
+      "Must not use brand names (Garmin, YETI, Patagonia) or team logos (NFL, MLB, NCAA)",
+      "Must not use trademarked phrases like 'Lake Life' in generic tag combos",
+      "Must disclose AI-assisted design creation on Etsy listings per Etsy's AI policy",
+      "Must list Printify as production partner on every listing"
+    ]
+  },
+  "brand": {
+    "store_name": "Highwater Supply Co.",
+    "brand_voice": "Rugged, honest, knowledgeable — like a fishing buddy who's done it. Not preachy, not corporate. We speak from experience. Dry humor beats motivational quotes.",
+    "color_palette": ["#1B2A38 (Deep Navy)", "#3D6B4F (Forest Green)", "#F5F0E6 (Warm Cream)", "#7A8B8C (Slate)", "#3A7D8C (Muted Teal)"],
+    "visual_style": "Original minimalist illustrations + handcrafted typography. Mountain skylines, lake silhouettes, campfire scenes, fish silhouettes — never photorealistic. Clean, limited color runs. Think vintage national park poster meets modern outdoor brand.",
+    "mission_statement": "Equipping the lake-and-trail crowd with gear worth trusting. Original designs made to last, sourced from people who actually get outside."
+  },
+  "catalog": [
+    {
+      "product_name": "Mountain Lake T-Shirt (Charcoal)",
+      "product_type": "Unisex t-shirt, DTG print",
+      "target_customer": "Trout fishing and lake camping crowd",
+      "estimated_cost": "$10.50",
+      "target_price": "$27.00",
+      "margin_notes": "DTG via Printify, ~61% gross margin. Size range up to 3XL adds appeal for broader market."
+    },
+    {
+      "product_name": "Mountain Lake T-Shirt (Cream)",
+      "product_type": "Unisex t-shirt, DTG print",
+      "target_customer": "Lifestyle outdoor, camp厨房 crowd",
+      "estimated_cost": "$10.50",
+      "target_price": "$26.00",
+      "margin_notes": "Lighter colorway = different buyer segment, expands catalog without new design."
+    },
+    {
+      "product_name": "Keep the Fire Lit Campfire Hoodie",
+      "product_type": "Unisex pullover hoodie, screen print",
+      "target_customer": "Campers, evening by the lake crowd",
+      "estimated_cost": "$22.00",
+      "target_price": "$42.00",
+      "margin_notes": "Premium product, strong gift item. Screen print cheaper per unit at scale."
+    },
+    {
+      "product_name": "Lake Days Never End Tee",
+      "product_type": "Unisex t-shirt, DTG",
+      "target_customer": "Lake lifestyle buyers, casual outdoor crowd",
+      "estimated_cost": "$10.50",
+      "target_price": "$27.00",
+      "margin_notes": "Broad appeal, strong gift. 'Lake days' phrasing performs well in Etsy search."
+    },
+    {
+      "product_name": "Trout Season T-Shirt",
+      "product_type": "Unisex t-shirt, DTG",
+      "target_customer": "Fly fishing and trout enthusiasts",
+      "estimated_cost": "$10.50",
+      "target_price": "$26.00",
+      "margin_notes": "Niche-enabling design, less competitive than general fishing. Strong seasonal lift expected."
+    },
+    {
+      "product_name": "Camp Cook Apron",
+      "product_type": "Canvas apron, screen print",
+      "target_customer": "Campfire cooking enthusiast, connects to Camp Cook brand",
+      "estimated_cost": "$12.50",
+      "target_price": "$28.00",
+      "margin_notes": "Links to existing Camp Cook Kitchens brand. Lower competition in Etsy cooking apparel."
+    },
+    {
+      "product_name": "Wilderness Pillowcase Set",
+      "product_type": "Two-piece pillowcase set, DTG",
+      "target_customer": "Home decor buyers, gift-givers",
+      "estimated_cost": "$11.00",
+      "target_price": "$29.00",
+      "margin_notes": "Home goods category on Etsy = high buyer intent. One design, two pillowcases."
+    },
+    {
+      "product_name": "Outdoorsy Tote Bag",
+      "product_type": "Heavy canvas tote, screen print",
+      "target_customer": "Farmers market, everyday carry crowd",
+      "estimated_cost": "$8.50",
+      "target_price": "$22.00",
+      "margin_notes": "Lower price point = easier first purchase. Canvas tote performs consistently on Etsy."
+    },
+    {
+      "product_name": "Summit Beanie",
+      "product_type": "Knit beanie with embroidered or printed patch",
+      "target_customer": "Year-round outdoor buyer",
+      "estimated_cost": "$9.00",
+      "target_price": "$24.00",
+      "margin_notes": "Embroidery on Printify has good results. One-size-fits-most reduces SKUs."
+    },
+    {
+      "product_name": "Lake Rule Ceramic Mug",
+      "product_type": "Ceramic mug, sublimation",
+      "target_customer": "Coffee culture outdoor buyers, gift market",
+      "estimated_cost": "$7.50",
+      "target_price": "$19.00",
+      "margin_notes": "Gift-ready, low return rate. Sublimation yields clean print on curved surface."
+    }
+  ],
+  "listings": [
+    {
+      "product_name": "Mountain Lake T-Shirt — Midnight",
+      "title": "Mountain Lake Outdoor T-Shirt — Fishing and Camping Apparel — Unisex",
+      "description": "A mountain lake scene done in a clean, minimal style. Original illustration on a soft, durable tee built for the outdoors.\n\n• 100% ring-spun cotton (or cotton-poly blend depending on Printify supplier)\n• Relaxed Unisex fit — true to size, size up for a looser look\n• Machine washable\n• Original design — not a licensed character or fan art\n\nDesigned for the person who'd rather be at the lake. Makes a solid gift for the fisherman, camper, or outdoor person in your life.\n\nAI-assisted design used: Yes (original work, human-curated)\nProduction partner: Printed and fulfilled by Printify\nProcessing: 3–5 business days before shipment",
+      "tags": ["outdoor t shirt", "mountain lake shirt", "fishing apparel", "camping t shirt", "lake life shirt", "trout fishing gear", "outdoor lifestyle", "university outdoor", "camp shirt", "nature shirt men", "fishing gift", "lake shirt", "outdoor camper shirt", "mens outdoor tee"],
+      "attributes": ["Size: S / M / L / XL / 2XL / 3XL", "Color: Deep Navy, Forest Green, Slate Gray"],
+      "personalization": "Yes — add a name or short phrase to the back at no extra charge. Leave note at checkout."
+    },
+    {
+      "product_name": "Keep the Fire Lit Campfire Hoodie",
+      "title": "Campfire Hoodie — Keep the Fire Lit — Outdoor Camping Pullover",
+      "description": "When the temperature drops and the coals are glowing, this hoodie holds up. Original campfire illustration screen-printed on a heavyweight fleece pullover.\n\n• Heavyweight fleece, relaxed fit\n• Front kangaroo pocket, ribbed cuffs\n• Machine washable, pre-shrunk\n• AI-assisted original design\n\nFor the campfire crowd — the ones who bring the wood, keep the conversation going, and know when to add another log.\n\nProduction partner: Printify\nProcessing: 3–5 business days",
+      "tags": ["campfire hoodie", "camping hoodie", "outdoor hoodie", "fire pit shirt", "camp gear", "outdoor apparel", "hoodie men", "camper gift", "bonfire shirt", "cottage core hoodie", "wilderness hoodie", "camping gift", "outdoor pullover", "fire gear"],
+      "attributes": ["Size: S / M / L / XL / 2XL / 3XL", "Color: Charcoal Heather, Slate"],
+      "personalization": "Yes — custom text on back available at checkout."
+    },
+    {
+      "product_name": "Lake Days Never End Tee",
+      "title": "Lake Days Never End T-Shirt — Summer Lake Shirt — Outdoor Lifestyle",
+      "description": "Simple. Direct. True.\n\n'Lake Days Never End' in clean hand-lettered type over a minimal mountain silhouette. This is the shirt for lazy summer mornings, cold water dips, and the kind of day that doesn't need to end.\n\n• Ring-spun cotton, relaxed unisex fit\n• Machine washable\n• Original design — not a licensed brand\n\nAI-assisted design. Printed and fulfilled by Printify.\nProcessing: 3–5 business days.",
+      "tags": ["lake t shirt", "lake days shirt", "lake life apparel", "summer shirt", "lake shirt men", "outdoor lake", "lake gift", "cottage core shirt", "summer lake gear", "lake culture", "outdoor quote shirt", "lake vacation", "lake lover gift", "water shirt"],
+      "attributes": ["Size: S / M / L / XL / 2XL / 3XL", "Color: Cream, Slate, Deep Navy"],
+      "personalization": "Name or date on back available — note at checkout."
+    },
+    {
+      "product_name": "Trout Season T-Shirt",
+      "title": "Trout Season T-Shirt — Fly Fishing Apparel — Trout Fisherman Gift",
+      "description": "Trout season isn't just an opening day — it's a state of mind. Original trout silhouette meets clean typography on a soft tee built to last.\n\n• Ring-spun cotton, relaxed fit\n• Machine washable\n• Original artwork, AI-assisted design\n\nFor the one who checks the hatches, knows the stocked water, and has a favorite stretch of river nobody else knows about.\n\nPrinted and fulfilled by Printify.\nProcessing: 3–5 business days.",
+      "tags": ["trout fishing shirt", "fly fishing apparel", "trout season", "fishing shirt men", "trout gift", "fly fisher shirt", "trout fisherman", "fishing t shirt", "river shirt", "catch and release shirt", "angling apparel", "trout gear", "outdoor fishing shirt", "trout life"],
+      "attributes": ["Size: S / M / L / XL / 2XL / 3XL", "Color: Forest Green, Slate, Cream"],
+      "personalization": "Custom text on back — add at checkout."
+    },
+    {
+      "product_name": "Camp Cook Apron",
+      "title": "Camp Cook Canvas Apron — Outdoor Kitchen Apron — campfire Cooking Gift",
+      "description": "The Camp Cook apron — built for the fire pit, cast iron, and Dutch oven sessions. Heavy canvas, practical pockets, made for work.\n\n• Heavy-duty canvas, adjustable neck strap\n• Two front pockets, tool loop\n• Water-resistant finish\n• Original AI-assisted design printed on chest\n\nFor the one who brings the cast iron, knows the ratio, and never serves undercooked beans.\n\nPrinted and fulfilled by Printify.\nProcessing: 3–5 business days.",
+      "tags": ["camp cooking apron", "outdoor kitchen apron", "camp chef apron", "cast iron apron", "Dutch oven apron", "camping apron", "camp cook gift", "outdoor cooking apron", "barbecue apron", "cottage core apron", "outdoor chef apron", "camp kitchen", "camp cooking gift", "fire cooking apron"],
+      "attributes": ["One size fits most", "Color: Natural Canvas, Charcoal"],
+      "personalization": "Custom name or phrase on chest — add at checkout."
+    },
+    {
+      "product_name": "Outdoorsy Canvas Tote",
+      "title": "Outdoorsy Canvas Tote Bag — Farmers Market and Camp Carry",
+      "description": "A dependable tote that earns its keep. Heavy canvas, clean original print, built to haul gear, groceries, or whatever the day requires.\n\n• 15 oz heavy canvas\n• Reinforced handles, interior pocket\n• Machine washable\n\nOriginal design, AI-assisted. Printed and fulfilled by Printify.\n\nThe tote that goes as hard as you do.",
+      "tags": ["canvas tote bag", "outdoor tote", "camp tote", "farmers market bag", "outdoorsy gift", "canvas bag", "nature tote", "outdoor lifestyle bag", "cottage core tote", "reusable bag outdoor", "lake tote", "camping tote", "heavy canvas tote", "outdoor gift bag"],
+      "attributes": ["One size", "Color: Natural, Charcoal"],
+      "personalization": "Initials or short name on handle — add at checkout."
+    }
+  ],
+  "integration": {
+    "etsy_setup_steps": [
+      "1. Create Etsy seller account at etsy.com. Choose 'Physical goods' shop type.",
+      "2. Set up shop name as 'Highwater Supply Co.' or approved alternative.",
+      "3. Under Shop Manager > Settings > Planning for the future: enable 'This shop uses a production partner'.",
+      "4. Add Printify as production partner: Printify's name and address: Printify Inc., 15000 NW 22nd St, Miami, FL 33169. This satisfies Etsy's production partner disclosure requirement.",
+      "5. Create shipping profiles: Domestic Economy (5–8 business days), International Standard (10–15 business days). Set processing time to 3–5 business days.",
+      "6. Set up 2–3 shop sections: Apparel, Home & Camp, Accessories.",
+      "7. Upload shop banner and logo.",
+      "8. Write and publish shop policies (refund, fulfillment, responsibilities)."
+    ],
+    "printify_setup_steps": [
+      "1. Create Printify account at printify.com. Connect to Etsy via Integrations > Etsy.",
+      "2. Authorize the Etsy connection — Printify will sync with your Etsy shop.",
+      "3. Browse Printify catalog: focus on Bella+Canvas, Gildan, and Next Level apparel providers for best quality-to-price.",
+      "4. For each product, use Printify's built-in mockup generator to create product images. Apply design to front center.",
+      "5. Set pricing: use 'Markup by cost' formula — cost × 2.5 = retail price minimum.",
+      "6. Push products to Etsy via Printify's 'Publish to Etsy' button. Sync automatically creates draft listings.",
+      "7. In Etsy, review draft listings, add descriptions and tags, then publish."
+    ],
+    "production_partner_notes": [
+      "Printify must be listed as production partner on every listing per Etsy policy.",
+      "Production partner address to list in Etsy: Printify Inc., 15000 NW 22nd St, Miami, FL 33169.",
+      "Etsy requires disclosure: 'Made by Printify' or similar in the listing description.",
+      "Keep processing time at 3–5 business days. Printify's typical fulfillment is 2–7 days."
+    ],
+    "order_routing_notes": [
+      "When an Etsy order is placed, Etsy sends order details to Printify automatically via integration.",
+      "Printify's print provider prints and ships within their stated SLA (usually 2–5 business days).",
+      "Customer receives tracking number via email — Printify handles fulfillment and customer notifications.",
+      "No manual order routing needed. Monitor Printify dashboard for any rejected or quality holds."
+    ],
+    "shipping_notes": [
+      "Set domestic shipping: $4.50 Economy (5–8 days) as base, $1 per additional item.",
+      "International: $12.50 base, $3 per additional item.",
+      "Free shipping threshold at $45 domestic — drives average order value up."
+    ]
+  },
+  "launch_assets": {
+    "shop_banner_copy": "Gear for the lake-and-trail crowd. Original designs, printed on real stuff.",
+    "shop_about_copy": "Highwater Supply Co. was born from too many trips where the right shirt wasn't available — the one that fit right, said something real, and didn't look like a corporate ad.\n\nWe make outdoor lifestyle apparel for people who actually get outside. Fishermen, campers, lake people, trail people. The stuff we make is the stuff we want to wear.\n\nEvery design is original. Every product is fulfilled by Printify, a print-on-demand partner we trust.\n\nQuestions or custom requests? Message us anytime.",
+    "faq": [
+      {"q": "How long does shipping take?", "a": "We make each item to order. Processing takes 3–5 business days, then shipping is added on top. Domestic orders typically arrive in 7–12 days total."},
+      {"q": "Do you offer custom sizes or personalization?", "a": "Yes. Most items can be customized with a name, date, or short phrase on the back. Add a note at checkout or message us before ordering."},
+      {"q": "What's your return policy?", "a": "We accept returns on unworn, unwashed items within 14 days of delivery. Exchanges available for different sizes. Custom personalized items are final sale unless defective."},
+      {"q": "Who makes and ships my order?", "a": "Orders are produced and shipped by Printify, our print-on-demand production partner. Everything is made to order, just for you."},
+      {"q": "Can I track my order?", "a": "Yes. You'll receive a tracking number by email once your order ships. Check your spam folder if it doesn't arrive within the stated processing window."},
+      {"q": "Do you ship internationally?", "a": "Yes. International shipping starts at $12.50 and delivery times vary by country. Customs and duties are the responsibility of the buyer."}
+    ],
+    "policy_points": [
+      "Processing time: 3–5 business days before shipment (Printify fulfills on our behalf).",
+      "Returns accepted on unworn/unwashed items within 14 days. Customer pays return shipping unless defective.",
+      "Personalized items are final sale unless there is a production error.",
+      "Production partner: Printify Inc., Miami FL.",
+      "Shipping delays beyond 5 business days? Message us — we track it down."
+    ]
+  },
+  "automation": {
+    "workflow_ideas": [
+      "All orders auto-sync from Etsy to Printify — no manual intervention required for standard fulfillment.",
+      "Use Printify's 'Auto-reorder' for reprints if a customer reports a quality issue.",
+      "Set up Etsy email templates for: Order confirmed, Shipment notification, Delivery confirmation.",
+      "Use Etsy Rank or Everbee to monitor listing performance and adjust keywords monthly.",
+      "Re-list sold-out seasonal designs each spring — same listing, new inventory."
+    ],
+    "approval_points": [
+      "Review all customer messages within 4 hours during business hours.",
+      "Review every order before it goes to Printify — spot-check sizing and address.",
+      "Check Printify quality dashboard weekly — flag any rejected prints immediately.",
+      "Monthly keyword audit on top 5 listings — update tags if search volume shifts."
+    ],
+    "scaling_steps": [
+      "1. Launch with 6–10 listings, monitor which designs drive most sales.",
+      "2. Expand catalog to 20 listings once top sellers are identified.",
+      "3. Add seasonal lines (e.g., 'Trout Season Opens' shirt each spring).",
+      "4. Test pricing at +10% on best sellers before discounting.",
+      "5. Consider a second Etsy shop or expansion to Shopify if volume justifies."
+    ]
+  },
+  "launch_checklist": [
+    "Create Etsy seller account and name shop 'Highwater Supply Co.'",
+    "Set up Printify account and connect to Etsy via Integrations",
+    "Add Printify as production partner in Etsy settings",
+    "Write and publish shop policies (refund, shipping, responsibilities)",
+    "Write 'About' page copy and upload shop banner",
+    "Create 6 initial listings with titles, descriptions, tags, and attributes",
+    "Add personalization options to applicable listings",
+    "Set up shipping profiles (domestic + international)",
+    "Push products to Etsy via Printify and publish listings",
+    "Verify first 3 orders route correctly to Printify",
+    "Enable Etsy email notification templates",
+    "Set up EtsyRank or Everbee for listing analytics",
+    "Join Etsy Teams for seller community advice and policy updates",
+    "Announce launch to existing audience (Camp Cook / Tight Lines channels)"
+  ],
+  "first_7_days_plan": [
+    "Day 1: Create Etsy account + Printify account. Connect them. Set production partner.",
+    "Day 2: Write shop about, policies, shipping profiles. Upload banner.",
+    "Day 3: Create 6 product designs (or confirm with designer). Push via Printify mockup tool.",
+    "Day 4: Write and publish first 6 listings. Add tags, attributes, personalization options.",
+    "Day 5: Review published listings, fix any issues, verify shipping profiles active.",
+    "Day 6: Run test order (buy own product) to verify Printify fulfillment and packaging quality.",
+    "Day 7: Analyze test order experience, fix any issues, announce launch to Camp Cook / Tight Lines audience."
+  ]
+}

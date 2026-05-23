@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-20T15:16:23.830Z",
+  "updatedAt": "2026-05-22T16:33:14.882Z",
   "entries": {
     "memory:memory/2026-05-12.md:1:10": {
       "key": "memory:memory/2026-05-12.md:1:10",
@@ -205,22 +205,25 @@
       "endLine": 12,
       "source": "memory",
       "snippet": "# 2026-05-14 ## Morning Post Attempt - Cron fired at ~8:15 AM for \"tight-lines-morning\" - Found `2026-05-14-morning.md` already existed (created 7:54 AM — duplicate run) - Buffer plugin not configured in OpenClaw — cannot push directly to Buffer - Notified KC via Telegram about both issues ## Action Items - Need Buffer API credentials/config to push posts directly - Check why cron fired twice (duplicate trigger)",
-      "recallCount": 3,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 5,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-19T01:11:08.046Z",
-      "lastRecalledAt": "2026-05-20T15:16:23.830Z",
+      "lastRecalledAt": "2026-05-22T16:33:14.882Z",
       "queryHashes": [
         "c1ac82af30d8",
         "c21ee012eb2b",
-        "16c363377970"
+        "16c363377970",
+        "5d071cf19238",
+        "9e7243d1fe01"
       ],
       "recallDays": [
         "2026-05-18",
         "2026-05-19",
-        "2026-05-20"
+        "2026-05-20",
+        "2026-05-22"
       ],
       "conceptTags": [
         "tight-lines-morning",
