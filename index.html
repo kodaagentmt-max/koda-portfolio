@@ -17,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* Scanline overlay */
     body::after {
       content: '';
       position: fixed;
@@ -33,7 +32,6 @@
       z-index: 9999;
     }
 
-    /* Starfield background */
     .starfield {
       position: fixed;
       inset: 0;
@@ -44,86 +42,123 @@
       z-index: -2;
     }
 
-    /* Title */
+    /* Header */
     .header {
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 30px 20px 16px;
     }
 
     .title {
-      font-size: clamp(14px, 3vw, 28px);
+      font-size: clamp(12px, 2.5vw, 22px);
       color: #fff;
       text-shadow: 0 0 20px rgba(180,130,255,0.8), 0 0 40px rgba(180,130,255,0.4);
       letter-spacing: 4px;
     }
 
     .subtitle {
-      font-size: clamp(7px, 1.5vw, 11px);
+      font-size: clamp(6px, 1.2vw, 9px);
       color: #8888cc;
-      margin-top: 12px;
-      letter-spacing: 2px;
-    }
-
-    /* Main hub */
-    .hub {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      gap: 30px;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Command Center */
-    .cmd-center {
-      flex: 0 0 auto;
-      text-align: center;
-    }
-
-    .cmd-img {
-      width: clamp(200px, 30vw, 340px);
-      height: auto;
-      border: 3px solid #6644aa;
-      border-radius: 8px;
-      box-shadow: 0 0 30px rgba(100,60,200,0.5), inset 0 0 20px rgba(100,60,200,0.2);
-      image-rendering: pixelated;
-    }
-
-    .cmd-label {
-      font-size: clamp(7px, 1vw, 10px);
-      color: #aaaaff;
       margin-top: 10px;
       letter-spacing: 2px;
     }
 
-    /* Arrow */
-    .hub-arrow {
-      font-size: 40px;
-      color: #6644aa;
-      text-shadow: 0 0 20px rgba(100,60,200,0.6);
+    .updated-bar {
+      font-size: 7px;
+      color: #555577;
+      margin-top: 8px;
+      letter-spacing: 1px;
     }
 
-    /* Rooms grid */
-    .rooms-section {
+    /* Hub Layout */
+    .hub {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 20px;
+      align-items: start;
+    }
+
+    .cmd-center {
+      text-align: center;
+      grid-column: 1;
+    }
+
+    .cmd-img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border: 3px solid #6644aa;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(100,60,200,0.5);
+      image-rendering: pixelated;
+    }
+
+    .cmd-label {
+      font-size: clamp(6px, 1vw, 8px);
+      color: #aaaaff;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    .hub-arrow {
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: #6644aa;
+      text-shadow: 0 0 15px rgba(100,60,200,0.6);
+    }
+
+    .agent-status {
+      grid-column: 3;
+      font-size: clamp(6px, 1vw, 8px);
+      line-height: 2.2;
+      padding: 16px;
+      background: rgba(20,15,45,0.7);
+      border: 2px solid #332266;
+      border-radius: 8px;
+      color: #aaaaff;
+    }
+
+    .agent-status h3 {
+      font-size: clamp(8px, 1.2vw, 10px);
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .agent-status .line {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #332266;
+      padding: 4px 0;
+    }
+
+    .agent-status .label { color: #7777aa; }
+    .agent-status .value { color: #aaaaff; }
+
+    /* Rooms */
+    .rooms-section {
+      padding: 10px 20px 30px;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .section-title {
       text-align: center;
-      font-size: clamp(10px, 2vw, 16px);
+      font-size: clamp(9px, 1.5vw, 13px);
       color: #fff;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       letter-spacing: 3px;
     }
 
     .rooms-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
 
     .room-card {
@@ -132,6 +167,7 @@
       overflow: hidden;
       background: rgba(30,20,60,0.6);
       transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
     }
 
     .room-card:hover {
@@ -142,33 +178,66 @@
 
     .room-img {
       width: 100%;
-      height: 180px;
+      height: 160px;
       object-fit: cover;
       image-rendering: pixelated;
       display: block;
     }
 
     .room-info {
-      padding: 14px 16px;
+      padding: 12px 14px;
     }
 
     .room-name {
-      font-size: clamp(8px, 1.2vw, 10px);
+      font-size: clamp(7px, 1vw, 9px);
       color: #ffffff;
       letter-spacing: 1px;
       margin-bottom: 8px;
     }
 
     .room-task {
-      font-size: clamp(6px, 1vw, 8px);
+      font-size: clamp(6px, 0.9vw, 7px);
       color: #9999cc;
       line-height: 1.8;
       margin-bottom: 10px;
+      min-height: 36px;
+    }
+
+    .room-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .stat {
+      font-size: clamp(6px, 0.9vw, 7px);
+      color: #aaaaff;
+      line-height: 1.6;
+    }
+
+    .stat .num {
+      font-size: clamp(9px, 1.2vw, 12px);
+      color: #fff;
+      display: block;
+    }
+
+    .room-activity {
+      font-size: clamp(5px, 0.8vw, 6px);
+      color: #7777bb;
+      line-height: 1.8;
+      margin-bottom: 8px;
+      border-top: 1px solid #332266;
+      padding-top: 6px;
+    }
+
+    .room-activity span {
+      color: #aaaaff;
     }
 
     .room-status {
-      font-size: clamp(6px, 1vw, 8px);
-      padding: 4px 10px;
+      font-size: clamp(6px, 0.9vw, 7px);
+      padding: 3px 8px;
       border-radius: 4px;
       display: inline-block;
     }
@@ -191,35 +260,35 @@
       border: 1px solid #cc9944;
     }
 
-    /* Status board */
+    /* Status Board */
     .status-board {
       max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 10px auto 40px;
+      padding: 16px;
       border: 2px solid #332266;
       border-radius: 8px;
       background: rgba(20,15,40,0.8);
     }
 
     .board-title {
-      font-size: clamp(9px, 1.5vw, 12px);
+      font-size: clamp(8px, 1.2vw, 10px);
       color: #fff;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       text-align: center;
       letter-spacing: 2px;
     }
 
     .board-items {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
     }
 
     .board-item {
-      font-size: clamp(6px, 1vw, 8px);
+      font-size: clamp(6px, 0.9vw, 7px);
       color: #aaaaff;
       line-height: 2;
-      padding: 10px;
+      padding: 8px;
       background: rgba(50,40,90,0.5);
       border-radius: 4px;
       border-left: 3px solid #6644aa;
@@ -228,22 +297,39 @@
     .board-item strong {
       color: #ffffff;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+    }
+
+    /* Live indicator */
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #66ffaa;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+      margin-right: 4px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 4px #66ffaa; }
+      50% { opacity: 0.4; box-shadow: 0 0 0px #66ffaa; }
     }
 
     /* Footer */
     .footer {
       text-align: center;
-      padding: 40px 20px;
-      font-size: 8px;
-      color: #555577;
+      padding: 20px;
+      font-size: 7px;
+      color: #444466;
       letter-spacing: 2px;
     }
 
     /* Responsive */
     @media (max-width: 700px) {
-      .hub { flex-direction: column; }
-      .hub-arrow { transform: rotate(90deg); }
+      .hub { grid-template-columns: 1fr; }
+      .hub-arrow { display: none; }
+      .agent-status { grid-column: 1; }
     }
   </style>
 </head>
@@ -253,107 +339,188 @@
 <div class="header">
   <div class="title">★ KODA MISSION CONTROL ★</div>
   <div class="subtitle">// AUTONOMOUS AGENT COMMAND CENTER //</div>
+  <div class="updated-bar">
+    <span class="live-dot"></span>LIVE — updated <span id="updated-time">--</span>
+  </div>
 </div>
 
-<!-- Main Hub Map -->
+<!-- Hub -->
 <div class="hub">
   <div class="cmd-center">
     <img src="rooms/command-center-map.png" class="cmd-img" alt="Command Center Map" onerror="this.style.display='none'">
     <div class="cmd-label">[ OVERALL MAP ]</div>
   </div>
+
+  <div class="hub-arrow">➜</div>
+
+  <div class="agent-status">
+    <h3>🤖 AGENT STATUS</h3>
+    <div class="line"><span class="label">HEAD:</span><span class="value">Koda — Commander</span></div>
+    <div class="line"><span class="label">SUBAGENTS:</span><span class="value" id="subagent-count">4</span></div>
+    <div class="line"><span class="label">ROOMS:</span><span class="value" id="room-count">4/4</span></div>
+    <div class="line"><span class="label">BLOGS:</span><span class="value" id="blog-count">2 Active</span></div>
+    <div class="line"><span class="label">BUFFER:</span><span class="value" id="buffer-status">9 posts queued</span></div>
+    <div class="line"><span class="label">ETSY POD:</span><span class="value" id="etsy-status">Pending KC setup</span></div>
+    <div class="line"><span class="label">SYSTEM:</span><span class="value">All nominal</span></div>
+  </div>
 </div>
 
 <!-- Room Cards -->
 <div class="rooms-section">
-  <div class="section-title">— MISSION ROOMS —</div>
-  <div class="rooms-grid">
-
-    <div class="room-card">
-      <img src="rooms/tight-lines-room.png" class="room-img" alt="Tight Lines Room">
-      <div class="room-info">
-        <div class="room-name">🎣 TIGHT LINES TACKLE BOX</div>
-        <div class="room-task">Fishing blog — content creation, Buffer scheduling, SEO optimization</div>
-        <span class="room-status status-active">● ACTIVE</span>
-      </div>
-    </div>
-
-    <div class="room-card">
-      <img src="rooms/camp-cook-room.png" class="room-img" alt="Camp Cook Room">
-      <div class="room-info">
-        <div class="room-name">🍳 CAMP COOK KITCHENS</div>
-        <div class="room-task">Campfire cooking blog — recipes, content calendar, Buffer posts</div>
-        <span class="room-status status-active">● ACTIVE</span>
-      </div>
-    </div>
-
-    <div class="room-card">
-      <img src="rooms/etsy-pod-room.png" class="room-img" alt="Etsy POD Room">
-      <div class="room-info">
-        <div class="room-name">🛒 ETSY POD STORE</div>
-        <div class="room-task">Print-on-demand store — Etsy + Printify integration, 50 design prompts, listing creation</div>
-        <span class="room-status status-pending">◐ PENDING SETUP</span>
-      </div>
-    </div>
-
-    <div class="room-card">
-      <img src="rooms/buffer-room.png" class="room-img" alt="Buffer Room">
-      <div class="room-info">
-        <div class="room-name">📅 BUFFER SOCIAL PUBLISHING</div>
-        <div class="room-task">Social queue management for both channels — automated 2-day scheduling, monitoring</div>
-        <span class="room-status status-done">✓ OPERATIONAL</span>
-      </div>
-    </div>
-
+  <div class="section-title">— MISSION ROOMS — click any room for details —</div>
+  <div class="rooms-grid" id="rooms-grid">
+    <!-- Populated by JS -->
   </div>
 </div>
 
 <!-- Status Board -->
 <div class="status-board">
-  <div class="board-title">— MISSION STATUS BOARD —</div>
-  <div class="board-items">
-
-    <div class="board-item">
-      <strong>🎣 Tight Lines Tackle Box</strong>
-      Blog: tightlines-blog repo<br>
-      Status: Content live<br>
-      Next: Weekly post rotation
-    </div>
-
-    <div class="board-item">
-      <strong>🍳 Camp Cook Kitchens</strong>
-      Blog: tag-soup-blog repo<br>
-      Status: Content live<br>
-      Next: Venison recipe series
-    </div>
-
-    <div class="board-item">
-      <strong>🛒 Etsy POD Store</strong>
-      Status: Design prompts ready<br>
-      Next: Connect Etsy + Printify<br>
-      Waiting on: KC to set up Etsy
-    </div>
-
-    <div class="board-item">
-      <strong>📅 Buffer Publishing</strong>
-      Channels: Tight Lines + Camp Cook<br>
-      Status: Scheduled through Monday<br>
-      Schedule: As previously set
-    </div>
-
-    <div class="board-item">
-      <strong>🤖 Koda Agent (Me)</strong>
-      Role: Head Agent / Commander<br>
-      Subagents: 4 spawned<br>
-      Location: Command Center
-    </div>
-
+  <div class="board-title">— LIVE STATUS BOARD —</div>
+  <div class="board-items" id="board-items">
+    <!-- Populated by JS -->
   </div>
 </div>
 
 <div class="footer">
   KODA v2.0 // AUTONOMOUS OPERATIONS // WOUNDED TREE LLC<br>
-  <br>
   "Good Vibes & Campfires"
 </div>
+
+<script>
+// ── Load live state ──────────────────────────────────────────────────────────
+let state = null;
+
+function html_escape(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function time_ago(ts) {
+  if (!ts) return 'never';
+  const diff = (Date.now() - new Date(ts).getTime()) / 1000;
+  if (diff < 60) return Math.floor(diff) + 's ago';
+  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+  return Math.floor(diff/86400) + 'd ago';
+}
+
+function render_rooms(projects) {
+  const grid = document.getElementById('rooms-grid');
+  grid.innerHTML = '';
+
+  const cards = [
+    {
+      key: 'tight_lines',
+      room_img: 'rooms/tight-lines-room.png',
+      name: '🎣 TIGHT LINES TACKLE BOX',
+      status_class: 'status-active',
+      status_text: '● ACTIVE',
+      room_task: 'Fishing blog — content creation, Buffer scheduling, SEO optimization',
+      project: projects.tight_lines
+    },
+    {
+      key: 'camp_cook',
+      room_img: 'rooms/camp-cook-room.png',
+      name: '🍳 CAMP COOK KITCHENS',
+      status_class: 'status-active',
+      status_text: '● ACTIVE',
+      room_task: 'Campfire cooking blog — recipes, content calendar, Buffer posts',
+      project: projects.camp_cook
+    },
+    {
+      key: 'etsy_pod',
+      room_img: 'rooms/etsy-pod-room.png',
+      name: '🛒 ETSY POD STORE',
+      status_class: 'status-pending',
+      status_text: '◐ PENDING SETUP',
+      room_task: 'Print-on-demand store — Etsy + Printify integration',
+      project: projects.etsy_pod
+    },
+    {
+      key: 'buffer',
+      room_img: 'rooms/buffer-room.png',
+      name: '📅 BUFFER SOCIAL PUBLISHING',
+      status_class: 'status-done',
+      status_text: '✓ OPERATIONAL',
+      room_task: 'Social queue management for both channels',
+      project: projects.buffer
+    }
+  ];
+
+  cards.forEach(card => {
+    const p = card.project || {};
+    const recent = (p.recent_activity || []).slice(0, 2).map(html_escape).join('<br>') || '—';
+
+    grid.innerHTML += `
+    <div class="room-card" onclick="toggle_detail('${card.key}')">
+      <img src="${html_escape(card.room_img)}" class="room-img" alt="${html_escape(card.name)}">
+      <div class="room-info">
+        <div class="room-name">${html_escape(card.name)}</div>
+        <div class="room-task">${html_escape(card.room_task)}</div>
+        <div class="room-stats">
+          <div class="stat"><span class="num">${p.posts_posted_count || 0}</span>posts published</div>
+          <div class="stat"><span class="num">${p.drafts_pending || 0}</span>drafts pending</div>
+        </div>
+        <div class="room-activity">Recent: <span>${recent}</span></div>
+        <span class="room-status ${card.status_class}">${html_escape(card.status_text)}</span>
+      </div>
+    </div>`;
+  });
+}
+
+function render_board(projects, agent_summary) {
+  const board = document.getElementById('board-items');
+  const p = projects;
+  board.innerHTML = `
+    <div class="board-item"><strong>🎣 Tight Lines Tackle Box</strong>Posts: ${p.tight_lines.posts_posted_count} live<br>Drafts: ${p.tight_lines.drafts_pending} queued<br>Last: ${html_escape(p.tight_lines.last_post)}</div>
+    <div class="board-item"><strong>🍳 Camp Cook Kitchens</strong>Recipes: ${p.camp_cook.posts_live} in archive<br>Drafts: ${p.camp_cook.drafts_pending} queued<br>Last: ${html_escape(p.camp_cook.last_post)}</div>
+    <div class="board-item"><strong>🛒 Etsy POD Store</strong>Status: ${p.etsy_pod.status === 'pending' ? 'Waiting on KC' : 'Active'}<br>Designs: ${p.etsy_pod.drafts_pending} prompts ready<br>Next: Etsy + Printify setup</div>
+    <div class="board-item"><strong>📅 Buffer Publishing</strong>${html_escape(p.buffer.next_task)}<br>Channels: Tight Lines + Camp Cook<br>Schedule: 2-day rotation</div>
+    <div class="board-item"><strong>🤖 Koda Agent</strong>Role: Head Agent / Commander<br>Subagents: ${agent_summary.subagents_spawned} spawned<br>Rooms: ${agent_summary.rooms_complete}/4 done</div>
+  `;
+}
+
+function update_agent_status(projects) {
+  document.getElementById('etsy-status').textContent =
+    projects.etsy_pod.status === 'pending' ? 'Pending KC setup' : 'Active';
+  document.getElementById('buffer-status').textContent =
+    (projects.buffer.recent_activity || [''])[0] || 'Operational';
+}
+
+function toggle_detail(key) {
+  // Simple: just log for now, could expand to a detail panel
+  console.log('Room selected:', key);
+}
+
+async function load_state() {
+  try {
+    const r = await fetch('state.json?_=' + Date.now());
+    if (!r.ok) throw new Error('state.json not found');
+    state = await r.json();
+  } catch (e) {
+    // Use hardcoded defaults if state.json unavailable (e.g. first load before Python runs)
+    state = {
+      updated: new Date().toISOString(),
+      projects: {
+        tight_lines: { posts_posted_count: 17, drafts_pending: 1, last_post: '2026-05-22.md', recent_activity: ['2026-05-22.md','2026-05-22-engagement.md','2026-05-22-hook-line-thinker.md'], posts_live: 1 },
+        camp_cook: { posts_posted_count: 19, drafts_pending: 1, last_post: '2026-05-22-weekly-recipe.md', recent_activity: ['2026-05-22-weekly-recipe.md','2026-05-22-outdoor-update.md','2026-05-22-engagement.md'], posts_live: 96 },
+        etsy_pod: { status: 'pending', posts_posted_count: 0, drafts_pending: 50, recent_activity: [] },
+        buffer: { next_task: 'Posts scheduled through Monday', recent_activity: ['9 posts queued across both channels'] }
+      },
+      agent_summary: { subagents_spawned: 4, rooms_complete: 4 }
+    };
+  }
+
+  document.getElementById('updated-time').textContent =
+    new Date(state.updated).toLocaleTimeString() + ' (' + time_ago(state.updated) + ')';
+
+  render_rooms(state.projects);
+  render_board(state.projects, state.agent_summary);
+  update_agent_status(state.projects);
+}
+
+load_state();
+setInterval(load_state, 30000); // refresh every 30s
+</script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+{
+  "updated": "2026-05-24T05:32:44.931460+00:00",
+  "koda_version": "2.0",
+  "projects": {
+    "tight_lines": {
+      "name": "Tight Lines Tackle Box",
+      "emoji": "\ud83c\udfa3",
+      "status": "active",
+      "posts_live": 1,
+      "posts_posted_count": 17,
+      "drafts_pending": 1,
+      "last_post": "2026-05-22.md",
+      "next_task": "Continue 2-day Buffer rotation schedule",
+      "recent_activity": [
+        "2026-05-22.md",
+        "2026-05-22-hook-line-thinker.md",
+        "2026-05-22-engagement.md"
+      ]
+    },
+    "camp_cook": {
+      "name": "Camp Cook Kitchens",
+      "emoji": "\ud83c\udf73",
+      "status": "active",
+      "posts_live": 96,
+      "posts_posted_count": 19,
+      "drafts_pending": 1,
+      "last_post": "2026-05-22-weekly-recipe.md",
+      "next_task": "Venison recipe series + 2-day Buffer rotation",
+      "recent_activity": [
+        "2026-05-22-weekly-recipe.md",
+        "2026-05-22-outdoor-update.md",
+        "2026-05-22-engagement.md"
+      ]
+    },
+    "etsy_pod": {
+      "name": "Etsy POD Store",
+      "emoji": "\ud83d\uded2",
+      "status": "pending",
+      "posts_live": 0,
+      "posts_posted_count": 0,
+      "drafts_pending": 50,
+      "last_post": null,
+      "next_task": "KC sets up Etsy seller account \u2192 connect Printify",
+      "recent_activity": []
+    },
+    "buffer": {
+      "name": "Buffer Social Publishing",
+      "emoji": "\ud83d\udcc5",
+      "status": "operational",
+      "next_task": "Posts scheduled through Monday",
+      "recent_activity": [
+        "9 posts queued across both channels"
+      ]
+    }
+  },
+  "agent_summary": {
+    "head_agent": "Koda \u2014 Commander",
+    "subagents_spawned": 4,
+    "rooms_complete": 4,
+    "status": "All systems nominal"
+  }
+}
