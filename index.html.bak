@@ -541,8 +541,8 @@ function render_rooms(projects) {
   CARDS.forEach(function(card) {
     var p = projects[card.project_key] || {};
     var recent = (p.recent_activity || []).slice(0, 2).map(html_escape).join('<br>') || '—';
-    grid.innerHTML += '<div class="room-card" >' +
-      '<img src="' + html_escape(card.room_img) + '" class="room-img" alt="' + html_escape(card.name) + '" onclick="open_lightbox(\' + html_escape(card.room_img) + ', \'' + html_escape(card.name) + \', ' + JSON.stringify(p).replace(/'/g, '&#39;') + ')" style="cursor:pointer" onerror="this.src=\' + html_escape(card.fallback_img) + \'">' +
+    grid.innerHTML += '<div class="room-card" onclick="open_lightbox(\'' + html_escape(card.room_img) + '\', \'' + html_escape(card.name) + '\', ' + JSON.stringify(p).replace(/'/g, "&#39;") + ')">' +
+      '<img src="' + html_escape(card.room_img) + '" class="room-img" alt="' + html_escape(card.name) + '" onerror="this.src=\'' + html_escape(card.fallback_img) + '\'">' +
       '<div class="room-info">' +
         '<div class="room-name">' + html_escape(card.name) + '</div>' +
         '<div class="room-task">' + html_escape(card.room_task) + '</div>' +
