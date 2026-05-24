@@ -91,6 +91,7 @@
       border-radius: 8px;
       box-shadow: 0 0 30px rgba(100,60,200,0.5);
       image-rendering: pixelated;
+      cursor: pointer;
     }
 
     .cmd-label {
@@ -164,6 +165,7 @@
       overflow: hidden;
       background: rgba(30,20,60,0.6);
       transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
     }
 
     .room-card:hover {
@@ -310,6 +312,55 @@
       50% { opacity: 0.4; box-shadow: 0 0 0px #66ffaa; }
     }
 
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 75vh;
+      border: 3px solid #6644aa;
+      border-radius: 8px;
+      box-shadow: 0 0 60px rgba(100,60,200,0.7);
+      image-rendering: pixelated;
+    }
+
+    .lightbox-label {
+      margin-top: 16px;
+      font-size: clamp(7px, 1.2vw, 10px);
+      color: #aaaaff;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .lightbox-hint {
+      margin-top: 8px;
+      font-size: clamp(6px, 1vw, 8px);
+      color: #555577;
+      letter-spacing: 1px;
+    }
+
+    .lightbox-stats {
+      margin-top: 12px;
+      font-size: clamp(6px, 0.9vw, 8px);
+      color: #8888cc;
+      text-align: center;
+      line-height: 2;
+    }
+
     .footer {
       text-align: center;
       padding: 20px;
@@ -338,7 +389,7 @@
 
 <div class="hub">
   <div class="cmd-center">
-    <img src="rooms/koda-agent-room.png" class="cmd-img" alt="Koda Command Center" onerror="this.src='rooms/command-center-map.png'">
+    <img src="rooms/koda-agent-room.png" class="cmd-img" alt="Koda Command Center" onclick="open_lightbox('rooms/koda-agent-room.png', 'KODA — HEAD AGENT', {})">
     <div class="cmd-label">🐕 KODA — HEAD AGENT / COMMANDER</div>
   </div>
 
@@ -348,7 +399,7 @@
     <h3>🤖 AGENT ROSTER</h3>
     <div class="line"><span class="label">HEAD:</span><span class="value">Koda 🐕 Commander</span></div>
     <div class="line"><span class="label">🎣 FISH:</span><span class="value">Bass Agent — Working</span></div>
-    <div class="line"><span class="label">🍳 BOAR:</span><span class="value">Chef Agent — Working</span></div>
+    <div class="line"><span class="label">🦌 ELK:</span><span class="value">Chef Agent — Working</span></div>
     <div class="line"><span class="label">🛒 FOX:</span><span class="value">Shop Agent — Standby</span></div>
     <div class="line"><span class="label">📅 OWL:</span><span class="value">Schedule Agent — Active</span></div>
     <div class="line"><span class="label">SYSTEM:</span><span class="value">All nominal</span></div>
@@ -356,7 +407,7 @@
 </div>
 
 <div class="rooms-section">
-  <div class="section-title">— MISSION ROOMS — click any room to see agent activity —</div>
+  <div class="section-title">— MISSION ROOMS — click any room to expand —</div>
   <div class="rooms-grid" id="rooms-grid"></div>
 </div>
 
@@ -368,6 +419,14 @@
 <div class="footer">
   KODA v2.0 // AUTONOMOUS OPERATIONS // WOUNDED TREE LLC<br>
   "Good Vibes & Campfires"
+</div>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox" id="lightbox" onclick="close_lightbox()">
+  <img src="" class="lightbox-img" id="lightbox-img" alt="">
+  <div class="lightbox-label" id="lightbox-label"></div>
+  <div class="lightbox-stats" id="lightbox-stats"></div>
+  <div class="lightbox-hint">[ click anywhere to close ]</div>
 </div>
 
 <script>
@@ -385,6 +444,28 @@ function time_ago(ts) {
   return Math.floor(diff/86400) + 'd ago';
 }
 
+function open_lightbox(img_src, label, project) {
+  var lb = document.getElementById('lightbox');
+  var li = document.getElementById('lightbox-img');
+  var ll = document.getElementById('lightbox-label');
+  var ls = document.getElementById('lightbox-stats');
+  li.src = img_src;
+  ll.textContent = label;
+  var posts = project.posts_posted_count || 0;
+  var drafts = project.drafts_pending || 0;
+  var recent = (project.recent_activity || []).slice(0, 3).join(', ') || 'none';
+  ls.innerHTML = 'posts: ' + posts + ' | drafts: ' + drafts + '<br>recent: ' + recent;
+  lb.classList.add('open');
+}
+
+function close_lightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') close_lightbox();
+});
+
 const CARDS = [
   {
     key: 'tight_lines',
@@ -400,7 +481,7 @@ const CARDS = [
     key: 'camp_cook',
     room_img: 'rooms/camp-cook-agent-room.png',
     fallback_img: 'rooms/camp-cook-room.png',
-    name: '🍳 BOAR CHEF AGENT — CAMP COOK KITCHENS',
+    name: '🦌 ELK CHEF AGENT — CAMP COOK KITCHENS',
     status_class: 'status-active',
     status_text: '● WORKING',
     room_task: 'Campfire recipes — venison series, Buffer posts, engagement',
@@ -429,40 +510,32 @@ const CARDS = [
 ];
 
 function render_rooms(projects) {
-  const grid = document.getElementById('rooms-grid');
+  var grid = document.getElementById('rooms-grid');
   grid.innerHTML = '';
   CARDS.forEach(function(card) {
-    const p = projects[card.project_key] || {};
-    const recent = (p.recent_activity || []).slice(0, 2).map(html_escape).join('<br>') || '—';
-    const escaped_img = html_escape(card.room_img);
-    const escaped_name = html_escape(card.name);
-    const escaped_task = html_escape(card.room_task);
-    const escaped_fallback = html_escape(card.fallback_img);
-    const escaped_status = html_escape(card.status_text);
-    const posts_pub = p.posts_posted_count || 0;
-    const drafts = p.drafts_pending || 0;
-
-    grid.innerHTML += '<div class="room-card">' +
-      '<img src="' + escaped_img + '" class="room-img" alt="' + escaped_name + '" onerror="this.src=\'' + escaped_fallback + '\'">' +
+    var p = projects[card.project_key] || {};
+    var recent = (p.recent_activity || []).slice(0, 2).map(html_escape).join('<br>') || '—';
+    grid.innerHTML += '<div class="room-card" onclick="open_lightbox(\'' + html_escape(card.room_img) + '\', \'' + html_escape(card.name) + '\', ' + JSON.stringify(p).replace(/'/g, "&#39;") + ')">' +
+      '<img src="' + html_escape(card.room_img) + '" class="room-img" alt="' + html_escape(card.name) + '" onerror="this.src=\'' + html_escape(card.fallback_img) + '\'">' +
       '<div class="room-info">' +
-        '<div class="room-name">' + escaped_name + '</div>' +
-        '<div class="room-task">' + escaped_task + '</div>' +
+        '<div class="room-name">' + html_escape(card.name) + '</div>' +
+        '<div class="room-task">' + html_escape(card.room_task) + '</div>' +
         '<div class="room-stats">' +
-          '<div class="stat"><span class="num">' + posts_pub + '</span>posts published</div>' +
-          '<div class="stat"><span class="num">' + drafts + '</span>drafts pending</div>' +
+          '<div class="stat"><span class="num">' + (p.posts_posted_count||0) + '</span>posts published</div>' +
+          '<div class="stat"><span class="num">' + (p.drafts_pending||0) + '</span>drafts pending</div>' +
         '</div>' +
         '<div class="room-activity">Recent: <span>' + recent + '</span></div>' +
-        '<span class="room-status ' + card.status_class + '">' + escaped_status + '</span>' +
+        '<span class="room-status ' + card.status_class + '">' + html_escape(card.status_text) + '</span>' +
       '</div>' +
     '</div>';
   });
 }
 
 function render_board(projects) {
-  const p = projects;
+  var p = projects;
   document.getElementById('board-items').innerHTML =
     '<div class="board-item"><strong>🎣 Tight Lines</strong>Posts: ' + p.tight_lines.posts_posted_count + ' published<br>Drafts: ' + p.tight_lines.drafts_pending + ' pending<br>Last: ' + html_escape(p.tight_lines.last_post) + '</div>' +
-    '<div class="board-item"><strong>🍳 Camp Cook</strong>Recipes: ' + p.camp_cook.posts_live + ' archived<br>Drafts: ' + p.camp_cook.drafts_pending + ' pending<br>Last: ' + html_escape(p.camp_cook.last_post) + '</div>' +
+    '<div class="board-item"><strong>🦌 Camp Cook</strong>Recipes: ' + p.camp_cook.posts_live + ' archived<br>Drafts: ' + p.camp_cook.drafts_pending + ' pending<br>Last: ' + html_escape(p.camp_cook.last_post) + '</div>' +
     '<div class="board-item"><strong>🛒 Etsy POD</strong>Status: ' + (p.etsy_pod.status === 'pending' ? 'Waiting on KC' : 'Active') + '<br>Designs: 50 prompts ready<br>Next: Etsy + Printify setup</div>' +
     '<div class="board-item"><strong>📅 Buffer</strong>' + html_escape(p.buffer.next_task) + '<br>Channels: Both scheduled<br>Schedule: 2-day rotation</div>' +
     '<div class="board-item"><strong>🐕 Koda</strong>Role: Head Agent / Commander<br>Subagents: 4 spawned<br>Status: All systems nominal</div>';
