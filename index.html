@@ -42,7 +42,6 @@
       z-index: -2;
     }
 
-    /* Header */
     .header {
       text-align: center;
       padding: 30px 20px 16px;
@@ -69,7 +68,6 @@
       letter-spacing: 1px;
     }
 
-    /* Hub Layout */
     .hub {
       display: grid;
       grid-template-columns: 1fr 60px 1fr;
@@ -140,7 +138,6 @@
     .agent-status .label { color: #7777aa; }
     .agent-status .value { color: #aaaaff; }
 
-    /* Rooms */
     .rooms-section {
       padding: 10px 20px 30px;
       max-width: 1100px;
@@ -167,7 +164,6 @@
       overflow: hidden;
       background: rgba(30,20,60,0.6);
       transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
     }
 
     .room-card:hover {
@@ -260,7 +256,6 @@
       border: 1px solid #cc9944;
     }
 
-    /* Status Board */
     .status-board {
       max-width: 1100px;
       margin: 10px auto 40px;
@@ -300,7 +295,6 @@
       margin-bottom: 2px;
     }
 
-    /* Live indicator */
     .live-dot {
       display: inline-block;
       width: 8px;
@@ -316,7 +310,6 @@
       50% { opacity: 0.4; box-shadow: 0 0 0px #66ffaa; }
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 20px;
@@ -325,7 +318,6 @@
       letter-spacing: 2px;
     }
 
-    /* Responsive */
     @media (max-width: 700px) {
       .hub { grid-template-columns: 1fr; }
       .hub-arrow { display: none; }
@@ -344,41 +336,33 @@
   </div>
 </div>
 
-<!-- Hub -->
 <div class="hub">
   <div class="cmd-center">
-    <img src="rooms/command-center-map.png" class="cmd-img" alt="Command Center Map" onerror="this.style.display='none'">
-    <div class="cmd-label">[ OVERALL MAP ]</div>
+    <img src="rooms/koda-agent-room.png" class="cmd-img" alt="Koda Command Center" onerror="this.src='rooms/command-center-map.png'">
+    <div class="cmd-label">🐕 KODA — HEAD AGENT / COMMANDER</div>
   </div>
 
   <div class="hub-arrow">➜</div>
 
   <div class="agent-status">
-    <h3>🤖 AGENT STATUS</h3>
-    <div class="line"><span class="label">HEAD:</span><span class="value">Koda — Commander</span></div>
-    <div class="line"><span class="label">SUBAGENTS:</span><span class="value" id="subagent-count">4</span></div>
-    <div class="line"><span class="label">ROOMS:</span><span class="value" id="room-count">4/4</span></div>
-    <div class="line"><span class="label">BLOGS:</span><span class="value" id="blog-count">2 Active</span></div>
-    <div class="line"><span class="label">BUFFER:</span><span class="value" id="buffer-status">9 posts queued</span></div>
-    <div class="line"><span class="label">ETSY POD:</span><span class="value" id="etsy-status">Pending KC setup</span></div>
+    <h3>🤖 AGENT ROSTER</h3>
+    <div class="line"><span class="label">HEAD:</span><span class="value">Koda 🐕 Commander</span></div>
+    <div class="line"><span class="label">🎣 FISH:</span><span class="value">Bass Agent — Working</span></div>
+    <div class="line"><span class="label">🍳 BOAR:</span><span class="value">Chef Agent — Working</span></div>
+    <div class="line"><span class="label">🛒 FOX:</span><span class="value">Shop Agent — Standby</span></div>
+    <div class="line"><span class="label">📅 OWL:</span><span class="value">Schedule Agent — Active</span></div>
     <div class="line"><span class="label">SYSTEM:</span><span class="value">All nominal</span></div>
   </div>
 </div>
 
-<!-- Room Cards -->
 <div class="rooms-section">
-  <div class="section-title">— MISSION ROOMS — click any room for details —</div>
-  <div class="rooms-grid" id="rooms-grid">
-    <!-- Populated by JS -->
-  </div>
+  <div class="section-title">— MISSION ROOMS — click any room to see agent activity —</div>
+  <div class="rooms-grid" id="rooms-grid"></div>
 </div>
 
-<!-- Status Board -->
 <div class="status-board">
   <div class="board-title">— LIVE STATUS BOARD —</div>
-  <div class="board-items" id="board-items">
-    <!-- Populated by JS -->
-  </div>
+  <div class="board-items" id="board-items"></div>
 </div>
 
 <div class="footer">
@@ -387,9 +371,6 @@
 </div>
 
 <script>
-// ── Load live state ──────────────────────────────────────────────────────────
-let state = null;
-
 function html_escape(s) {
   if (s == null) return '';
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -404,101 +385,97 @@ function time_ago(ts) {
   return Math.floor(diff/86400) + 'd ago';
 }
 
+const CARDS = [
+  {
+    key: 'tight_lines',
+    room_img: 'rooms/tight-lines-agent.png',
+    fallback_img: 'rooms/tight-lines-room.png',
+    name: '🎣 BASS AGENT — TIGHT LINES TACKLE BOX',
+    status_class: 'status-active',
+    status_text: '● WORKING',
+    room_task: 'Fishing blog content — drafts, Buffer queue, post analytics',
+    project_key: 'tight_lines'
+  },
+  {
+    key: 'camp_cook',
+    room_img: 'rooms/camp-cook-agent-room.png',
+    fallback_img: 'rooms/camp-cook-room.png',
+    name: '🍳 BOAR CHEF AGENT — CAMP COOK KITCHENS',
+    status_class: 'status-active',
+    status_text: '● WORKING',
+    room_task: 'Campfire recipes — venison series, Buffer posts, engagement',
+    project_key: 'camp_cook'
+  },
+  {
+    key: 'etsy_pod',
+    room_img: 'rooms/etsy-agent-room.png',
+    fallback_img: 'rooms/etsy-pod-room.png',
+    name: '🛒 FOX AGENT — ETSY POD STORE',
+    status_class: 'status-pending',
+    status_text: '◐ STANDBY',
+    room_task: 'Print-on-demand store — waiting on KC to set up Etsy',
+    project_key: 'etsy_pod'
+  },
+  {
+    key: 'buffer',
+    room_img: 'rooms/buffer-agent-room.png',
+    fallback_img: 'rooms/buffer-room.png',
+    name: '📅 OWL AGENT — BUFFER SOCIAL PUBLISHING',
+    status_class: 'status-done',
+    status_text: '✓ OPERATIONAL',
+    room_task: 'Social queue for Tight Lines + Camp Cook through Monday',
+    project_key: 'buffer'
+  }
+];
+
 function render_rooms(projects) {
   const grid = document.getElementById('rooms-grid');
   grid.innerHTML = '';
-
-  const cards = [
-    {
-      key: 'tight_lines',
-      room_img: 'rooms/tight-lines-room.png',
-      name: '🎣 TIGHT LINES TACKLE BOX',
-      status_class: 'status-active',
-      status_text: '● ACTIVE',
-      room_task: 'Fishing blog — content creation, Buffer scheduling, SEO optimization',
-      project: projects.tight_lines
-    },
-    {
-      key: 'camp_cook',
-      room_img: 'rooms/camp-cook-room.png',
-      name: '🍳 CAMP COOK KITCHENS',
-      status_class: 'status-active',
-      status_text: '● ACTIVE',
-      room_task: 'Campfire cooking blog — recipes, content calendar, Buffer posts',
-      project: projects.camp_cook
-    },
-    {
-      key: 'etsy_pod',
-      room_img: 'rooms/etsy-pod-room.png',
-      name: '🛒 ETSY POD STORE',
-      status_class: 'status-pending',
-      status_text: '◐ PENDING SETUP',
-      room_task: 'Print-on-demand store — Etsy + Printify integration',
-      project: projects.etsy_pod
-    },
-    {
-      key: 'buffer',
-      room_img: 'rooms/buffer-room.png',
-      name: '📅 BUFFER SOCIAL PUBLISHING',
-      status_class: 'status-done',
-      status_text: '✓ OPERATIONAL',
-      room_task: 'Social queue management for both channels',
-      project: projects.buffer
-    }
-  ];
-
-  cards.forEach(card => {
-    const p = card.project || {};
+  CARDS.forEach(function(card) {
+    const p = projects[card.project_key] || {};
     const recent = (p.recent_activity || []).slice(0, 2).map(html_escape).join('<br>') || '—';
+    const escaped_img = html_escape(card.room_img);
+    const escaped_name = html_escape(card.name);
+    const escaped_task = html_escape(card.room_task);
+    const escaped_fallback = html_escape(card.fallback_img);
+    const escaped_status = html_escape(card.status_text);
+    const posts_pub = p.posts_posted_count || 0;
+    const drafts = p.drafts_pending || 0;
 
-    grid.innerHTML += `
-    <div class="room-card" onclick="toggle_detail('${card.key}')">
-      <img src="${html_escape(card.room_img)}" class="room-img" alt="${html_escape(card.name)}">
-      <div class="room-info">
-        <div class="room-name">${html_escape(card.name)}</div>
-        <div class="room-task">${html_escape(card.room_task)}</div>
-        <div class="room-stats">
-          <div class="stat"><span class="num">${p.posts_posted_count || 0}</span>posts published</div>
-          <div class="stat"><span class="num">${p.drafts_pending || 0}</span>drafts pending</div>
-        </div>
-        <div class="room-activity">Recent: <span>${recent}</span></div>
-        <span class="room-status ${card.status_class}">${html_escape(card.status_text)}</span>
-      </div>
-    </div>`;
+    grid.innerHTML += '<div class="room-card">' +
+      '<img src="' + escaped_img + '" class="room-img" alt="' + escaped_name + '" onerror="this.src=\'' + escaped_fallback + '\'">' +
+      '<div class="room-info">' +
+        '<div class="room-name">' + escaped_name + '</div>' +
+        '<div class="room-task">' + escaped_task + '</div>' +
+        '<div class="room-stats">' +
+          '<div class="stat"><span class="num">' + posts_pub + '</span>posts published</div>' +
+          '<div class="stat"><span class="num">' + drafts + '</span>drafts pending</div>' +
+        '</div>' +
+        '<div class="room-activity">Recent: <span>' + recent + '</span></div>' +
+        '<span class="room-status ' + card.status_class + '">' + escaped_status + '</span>' +
+      '</div>' +
+    '</div>';
   });
 }
 
-function render_board(projects, agent_summary) {
-  const board = document.getElementById('board-items');
+function render_board(projects) {
   const p = projects;
-  board.innerHTML = `
-    <div class="board-item"><strong>🎣 Tight Lines Tackle Box</strong>Posts: ${p.tight_lines.posts_posted_count} live<br>Drafts: ${p.tight_lines.drafts_pending} queued<br>Last: ${html_escape(p.tight_lines.last_post)}</div>
-    <div class="board-item"><strong>🍳 Camp Cook Kitchens</strong>Recipes: ${p.camp_cook.posts_live} in archive<br>Drafts: ${p.camp_cook.drafts_pending} queued<br>Last: ${html_escape(p.camp_cook.last_post)}</div>
-    <div class="board-item"><strong>🛒 Etsy POD Store</strong>Status: ${p.etsy_pod.status === 'pending' ? 'Waiting on KC' : 'Active'}<br>Designs: ${p.etsy_pod.drafts_pending} prompts ready<br>Next: Etsy + Printify setup</div>
-    <div class="board-item"><strong>📅 Buffer Publishing</strong>${html_escape(p.buffer.next_task)}<br>Channels: Tight Lines + Camp Cook<br>Schedule: 2-day rotation</div>
-    <div class="board-item"><strong>🤖 Koda Agent</strong>Role: Head Agent / Commander<br>Subagents: ${agent_summary.subagents_spawned} spawned<br>Rooms: ${agent_summary.rooms_complete}/4 done</div>
-  `;
+  document.getElementById('board-items').innerHTML =
+    '<div class="board-item"><strong>🎣 Tight Lines</strong>Posts: ' + p.tight_lines.posts_posted_count + ' published<br>Drafts: ' + p.tight_lines.drafts_pending + ' pending<br>Last: ' + html_escape(p.tight_lines.last_post) + '</div>' +
+    '<div class="board-item"><strong>🍳 Camp Cook</strong>Recipes: ' + p.camp_cook.posts_live + ' archived<br>Drafts: ' + p.camp_cook.drafts_pending + ' pending<br>Last: ' + html_escape(p.camp_cook.last_post) + '</div>' +
+    '<div class="board-item"><strong>🛒 Etsy POD</strong>Status: ' + (p.etsy_pod.status === 'pending' ? 'Waiting on KC' : 'Active') + '<br>Designs: 50 prompts ready<br>Next: Etsy + Printify setup</div>' +
+    '<div class="board-item"><strong>📅 Buffer</strong>' + html_escape(p.buffer.next_task) + '<br>Channels: Both scheduled<br>Schedule: 2-day rotation</div>' +
+    '<div class="board-item"><strong>🐕 Koda</strong>Role: Head Agent / Commander<br>Subagents: 4 spawned<br>Status: All systems nominal</div>';
 }
 
-function update_agent_status(projects) {
-  document.getElementById('etsy-status').textContent =
-    projects.etsy_pod.status === 'pending' ? 'Pending KC setup' : 'Active';
-  document.getElementById('buffer-status').textContent =
-    (projects.buffer.recent_activity || [''])[0] || 'Operational';
-}
-
-function toggle_detail(key) {
-  // Simple: just log for now, could expand to a detail panel
-  console.log('Room selected:', key);
-}
+var state = null;
 
 async function load_state() {
   try {
-    const r = await fetch('state.json?_=' + Date.now());
-    if (!r.ok) throw new Error('state.json not found');
-    state = await r.json();
-  } catch (e) {
-    // Use hardcoded defaults if state.json unavailable (e.g. first load before Python runs)
+    var r = await fetch('state.json?_=' + Date.now());
+    if (r.ok) state = await r.json();
+  } catch(e) {}
+  if (!state) {
     state = {
       updated: new Date().toISOString(),
       projects: {
@@ -506,21 +483,16 @@ async function load_state() {
         camp_cook: { posts_posted_count: 19, drafts_pending: 1, last_post: '2026-05-22-weekly-recipe.md', recent_activity: ['2026-05-22-weekly-recipe.md','2026-05-22-outdoor-update.md','2026-05-22-engagement.md'], posts_live: 96 },
         etsy_pod: { status: 'pending', posts_posted_count: 0, drafts_pending: 50, recent_activity: [] },
         buffer: { next_task: 'Posts scheduled through Monday', recent_activity: ['9 posts queued across both channels'] }
-      },
-      agent_summary: { subagents_spawned: 4, rooms_complete: 4 }
+      }
     };
   }
-
-  document.getElementById('updated-time').textContent =
-    new Date(state.updated).toLocaleTimeString() + ' (' + time_ago(state.updated) + ')';
-
+  document.getElementById('updated-time').textContent = new Date(state.updated).toLocaleTimeString() + ' (' + time_ago(state.updated) + ')';
   render_rooms(state.projects);
-  render_board(state.projects, state.agent_summary);
-  update_agent_status(state.projects);
+  render_board(state.projects);
 }
 
 load_state();
-setInterval(load_state, 30000); // refresh every 30s
+setInterval(load_state, 30000);
 </script>
 </body>
 </html>
