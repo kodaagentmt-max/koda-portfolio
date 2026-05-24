@@ -169,9 +169,28 @@
     }
 
     .room-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-4px) scale(1.02);
       box-shadow: 0 0 20px rgba(100,60,200,0.4);
       border-color: #8866dd;
+    }
+
+    .room-card.tapped {
+      transform: scale(0.98);
+    }
+
+    @keyframes agent-bounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { filter: drop-shadow(0 0 4px rgba(100,60,200,0.4)); }
+      50% { filter: drop-shadow(0 0 12px rgba(100,60,200,0.8)); }
+    }
+
+    @keyframes scanline-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 100px; }
     }
 
     .room-img {
@@ -180,10 +199,17 @@
       object-fit: cover;
       image-rendering: pixelated;
       display: block;
+      cursor: pointer;
+      animation: glow-pulse 3s ease-in-out infinite;
     }
 
     .room-info {
       padding: 12px 14px;
+      cursor: pointer;
+    }
+
+    .room-info:active {
+      background: rgba(100,60,200,0.15);
     }
 
     .room-name {
@@ -562,6 +588,14 @@ async function load_state() {
   document.getElementById('updated-time').textContent = new Date(state.updated).toLocaleTimeString() + ' (' + time_ago(state.updated) + ')';
   render_rooms(state.projects);
   render_board(state.projects);
+  animate_agents();
+}
+
+function animate_agents() {
+  var imgs = document.querySelectorAll('.room-img');
+  imgs.forEach(function(img, i) {
+    img.style.animationDelay = (i * 0.4) + 's';
+  });
 }
 
 load_state();
