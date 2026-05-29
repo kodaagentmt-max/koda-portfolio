@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29T21:14:35.722976+00:00",
+  "updated": "2026-05-29T21:21:21.861906+00:00",
   "koda_version": "2.0",
   "projects": {
     "tight_lines": {
@@ -22,14 +22,14 @@
       "emoji": "\ud83c\udf73",
       "status": "active",
       "posts_live": 96,
-      "posts_posted_count": 23,
+      "posts_posted_count": 24,
       "drafts_pending": 1,
-      "last_post": "2026-05-28-weekly-recipe.md",
+      "last_post": "2026-05-29.md",
       "next_task": "Venison recipe series + 2-day Buffer rotation",
       "recent_activity": [
+        "2026-05-29.md",
         "2026-05-28-weekly-recipe.md",
-        "2026-05-27-weekly-recipe.md",
-        "2026-05-26-weekly-recipe.md"
+        "2026-05-27-weekly-recipe.md"
       ]
     },
     "etsy_pod": {
