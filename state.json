@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29T18:00:22.430937+00:00",
+  "updated": "2026-05-29T18:09:16.598437+00:00",
   "koda_version": "2.0",
   "projects": {
     "tight_lines": {
@@ -7,14 +7,14 @@
       "emoji": "\ud83c\udfa3",
       "status": "active",
       "posts_live": 1,
-      "posts_posted_count": 20,
+      "posts_posted_count": 21,
       "drafts_pending": 1,
-      "last_post": "2026-05-27-hook-line-thinker.md",
+      "last_post": "2026-05-29-hook-line-thinker.md",
       "next_task": "Continue 2-day Buffer rotation schedule",
       "recent_activity": [
+        "2026-05-29-hook-line-thinker.md",
         "2026-05-27-hook-line-thinker.md",
-        "2026-05-26-hook-line-thinker.md",
-        "2026-05-25-hook-line-thinker.md"
+        "2026-05-26-hook-line-thinker.md"
       ]
     },
     "camp_cook": {
