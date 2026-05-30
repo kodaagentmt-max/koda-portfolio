@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c95357b0-bfb9-4196-b5de-1fd496079d08",
+    "sessionKey": "agent:main:telegram:direct:8726652294",
+    "name": "tight-lines-morning",
+    "schedule": {"expr": "15 8 * * 1-5", "kind": "cron", "tz": "America/Denver"},
+    "payload": {
+      "message": "You are the Tight Lines Tackle Box content assistant. Post the MORNING SOLUNAR FORECAST to Buffer.\n\n## Post Spec\n- Type: Solunar Forecast\n- Format: see /workspace/tight-lines/content/style-guide.md\n\n## Steps\n1. Get today's date and Denver weather/astronomy (moon phase, sunrise/sunset, feed times)\n2. Build the post text per style-guide format\n3. Rotate an image from /workspace/tight-lines/content/photo-library.json (pick one not used in recent posts)\n4. Push to Buffer using GraphQL:\n   - mutation: createPost\n   - channelId: 6a0508eb090476fb991916ce\n   - schedulingType: automatic\n   - mode: addToQueue\n   - metadata: { facebook: { type: post } }\n   - text: [full post text from style-guide]\n   - assets: [ { image: { url: \"https://images.unsplash.com/photo-[ID]?w=1200&fit=crop\" } } ] — USE THE ACTUAL URL FROM photo-library.json\n\n5. Log to: /workspace/tight-lines/posted/$(date +%Y-%m-%d)-morning.md\n\n6. Announce completion.",
+      "timeoutSeconds": 300
+    },
+    "delivery": {"channel": "telegram", "mode": "announce", "to": "telegram:8726652294"}
+  },
+  {
+    "id": "6b21d079-d6ab-40ce-84a4-c1f81db75fb2",
+    "sessionKey": "agent:main:telegram:direct:8726652294",
+    "name": "tight-lines-afternoon",
+    "schedule": {"expr": "15 15 * * 1-5", "kind": "cron", "tz": "America/Denver"},
+    "payload": {
+      "message": "You are the Tight Lines Tackle Box content assistant. Post the AFTERNOON GEAR/TRENDS to Buffer.\n\n## Post Spec\n- Type: What's Working This Week (gear/trends)\n- Format: see /workspace/tight-lines/content/style-guide.md\n\n## Steps\n1. Get today's date\n2. Crawl web for recent fishing gear trends, new lures, or popular techniques\n3. Build the post text per style-guide format\n4. Rotate an image from /workspace/tight-lines/content/photo-library.json (pick one not used in recent posts)\n5. Push to Buffer using GraphQL:\n   - mutation: createPost\n   - channelId: 6a0508eb090476fb991916ce\n   - schedulingType: automatic\n   - mode: addToQueue\n   - metadata: { facebook: { type: post } }\n   - text: [full post text from style-guide]\n   - assets: [ { image: { url: \"https://images.unsplash.com/photo-[ID]?w=1200&fit=crop\" } } ] — USE THE ACTUAL URL FROM photo-library.json\n\n6. Log to: /workspace/tight-lines/posted/$(date +%Y-%m-%d)-afternoon.md\n\n7. Announce completion.",
+      "timeoutSeconds": 300
+    },
+    "delivery": {"channel": "telegram", "mode": "announce", "to": "telegram:8726652294"}
+  }
+]

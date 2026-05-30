@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KODA MISSION CONTROL</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d0d1a;
+      color: #c0c0e0;
+      font-family: 'Press Start 2P', 'Courier New', monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Scanline overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.12) 0px,
+        rgba(0,0,0,0.12) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Starfield background */
+    .starfield {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(60,30,120,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(20,60,100,0.2) 0%, transparent 50%),
+        #0d0d1a;
+      z-index: -2;
+    }
+
+    /* Title */
+    .header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .title {
+      font-size: clamp(14px, 3vw, 28px);
+      color: #fff;
+      text-shadow: 0 0 20px rgba(180,130,255,0.8), 0 0 40px rgba(180,130,255,0.4);
+      letter-spacing: 4px;
+    }
+
+    .subtitle {
+      font-size: clamp(7px, 1.5vw, 11px);
+      color: #8888cc;
+      margin-top: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* Main hub */
+    .hub {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Command Center */
+    .cmd-center {
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    .cmd-img {
+      width: clamp(200px, 30vw, 340px);
+      height: auto;
+      border: 3px solid #6644aa;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(100,60,200,0.5), inset 0 0 20px rgba(100,60,200,0.2);
+      image-rendering: pixelated;
+    }
+
+    .cmd-label {
+      font-size: clamp(7px, 1vw, 10px);
+      color: #aaaaff;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* Arrow */
+    .hub-arrow {
+      font-size: 40px;
+      color: #6644aa;
+      text-shadow: 0 0 20px rgba(100,60,200,0.6);
+    }
+
+    /* Rooms grid */
+    .rooms-section {
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(10px, 2vw, 16px);
+      color: #fff;
+      margin-bottom: 30px;
+      letter-spacing: 3px;
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .room-card {
+      border: 2px solid #332266;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(30,20,60,0.6);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .room-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(100,60,200,0.4);
+      border-color: #8866dd;
+    }
+
+    .room-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      image-rendering: pixelated;
+      display: block;
+    }
+
+    .room-info {
+      padding: 14px 16px;
+    }
+
+    .room-name {
+      font-size: clamp(8px, 1.2vw, 10px);
+      color: #ffffff;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .room-task {
+      font-size: clamp(6px, 1vw, 8px);
+      color: #9999cc;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .room-status {
+      font-size: clamp(6px, 1vw, 8px);
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .status-active {
+      background: rgba(60,200,120,0.2);
+      color: #66ffaa;
+      border: 1px solid #44cc88;
+    }
+
+    .status-done {
+      background: rgba(100,160,255,0.2);
+      color: #88aaff;
+      border: 1px solid #5577cc;
+    }
+
+    .status-pending {
+      background: rgba(200,160,60,0.2);
+      color: #ffcc66;
+      border: 1px solid #cc9944;
+    }
+
+    /* Status board */
+    .status-board {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 2px solid #332266;
+      border-radius: 8px;
+      background: rgba(20,15,40,0.8);
+    }
+
+    .board-title {
+      font-size: clamp(9px, 1.5vw, 12px);
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .board-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .board-item {
+      font-size: clamp(6px, 1vw, 8px);
+      color: #aaaaff;
+      line-height: 2;
+      padding: 10px;
+      background: rgba(50,40,90,0.5);
+      border-radius: 4px;
+      border-left: 3px solid #6644aa;
+    }
+
+    .board-item strong {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 8px;
+      color: #555577;
+      letter-spacing: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .hub { flex-direction: column; }
+      .hub-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+<div class="starfield"></div>
+
+<div class="header">
+  <div class="title">★ KODA MISSION CONTROL ★</div>
+  <div class="subtitle">// AUTONOMOUS AGENT COMMAND CENTER //</div>
+</div>
+
+<!-- Main Hub Map -->
+<div class="hub">
+  <div class="cmd-center">
+    <img src="rooms/command-center-map.png" class="cmd-img" alt="Command Center Map" onerror="this.style.display='none'">
+    <div class="cmd-label">[ OVERALL MAP ]</div>
+  </div>
+</div>
+
+<!-- Room Cards -->
+<div class="rooms-section">
+  <div class="section-title">— MISSION ROOMS —</div>
+  <div class="rooms-grid">
+
+    <div class="room-card">
+      <img src="rooms/tight-lines-room.png" class="room-img" alt="Tight Lines Room">
+      <div class="room-info">
+        <div class="room-name">🎣 TIGHT LINES TACKLE BOX</div>
+        <div class="room-task">Fishing blog — content creation, Buffer scheduling, SEO optimization</div>
+        <span class="room-status status-active">● ACTIVE</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <img src="rooms/camp-cook-room.png" class="room-img" alt="Camp Cook Room">
+      <div class="room-info">
+        <div class="room-name">🍳 CAMP COOK KITCHENS</div>
+        <div class="room-task">Campfire cooking blog — recipes, content calendar, Buffer posts</div>
+        <span class="room-status status-active">● ACTIVE</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <img src="rooms/etsy-pod-room.png" class="room-img" alt="Etsy POD Room">
+      <div class="room-info">
+        <div class="room-name">🛒 ETSY POD STORE</div>
+        <div class="room-task">Print-on-demand store — Etsy + Printify integration, 50 design prompts, listing creation</div>
+        <span class="room-status status-pending">◐ PENDING SETUP</span>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <img src="rooms/buffer-room.png" class="room-img" alt="Buffer Room">
+      <div class="room-info">
+        <div class="room-name">📅 BUFFER SOCIAL PUBLISHING</div>
+        <div class="room-task">Social queue management for both channels — automated 2-day scheduling, monitoring</div>
+        <span class="room-status status-done">✓ OPERATIONAL</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Status Board -->
+<div class="status-board">
+  <div class="board-title">— MISSION STATUS BOARD —</div>
+  <div class="board-items">
+
+    <div class="board-item">
+      <strong>🎣 Tight Lines Tackle Box</strong>
+      Blog: tightlines-blog repo<br>
+      Status: Content live<br>
+      Next: Weekly post rotation
+    </div>
+
+    <div class="board-item">
+      <strong>🍳 Camp Cook Kitchens</strong>
+      Blog: tag-soup-blog repo<br>
+      Status: Content live<br>
+      Next: Venison recipe series
+    </div>
+
+    <div class="board-item">
+      <strong>🛒 Etsy POD Store</strong>
+      Status: Design prompts ready<br>
+      Next: Connect Etsy + Printify<br>
+      Waiting on: KC to set up Etsy
+    </div>
+
+    <div class="board-item">
+      <strong>📅 Buffer Publishing</strong>
+      Channels: Tight Lines + Camp Cook<br>
+      Status: Scheduled through Monday<br>
+      Schedule: As previously set
+    </div>
+
+    <div class="board-item">
+      <strong>🤖 Koda Agent (Me)</strong>
+      Role: Head Agent / Commander<br>
+      Subagents: 4 spawned<br>
+      Location: Command Center
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  KODA v2.0 // AUTONOMOUS OPERATIONS // WOUNDED TREE LLC<br>
+  <br>
+  "Good Vibes & Campfires"
+</div>
+</body>
+</html>
