@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-30T23:20:34.948Z",
+  "updatedAt": "2026-05-30T23:39:01.347Z",
   "entries": {
     "memory:memory/2026-05-12.md:1:10": {
       "key": "memory:memory/2026-05-12.md:1:10",
@@ -541,6 +541,37 @@
         "tight-lines.json",
         "tight-lines-trivia.json",
         "camp-cook-hacks.json"
+      ]
+    },
+    "memory:memory/2026-05-28.md:1:35": {
+      "key": "memory:memory/2026-05-28.md:1:35",
+      "path": "memory/2026-05-28.md",
+      "startLine": 1,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "## Cron: backup-projects.sh — 2026-05-28 00:02 MDT **Status:** OK — see full notes below. ## Mission Control State Update (01:10 MDT) - ✅ state.json updated & pushed to koda-portfolio/master - Commit: 4de02bc | Remote: 6141e43 → 4de02bc To https://github.com/kodaagentmt-max/koda-portfolio.git ! [rejected] master -> master (fetch first) error: failed to push some refs to 'https://github.com/kodaagentmt-max/koda-portfolio.git' hint: Updates were rejected because the remote contains work that you do not hint: have locally. This is usually caused by another repository pushing to hint: the same ref. If you want to integrate the remote changes, use hint: 'git pull' before pushing again.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-30T23:39:01.347Z",
+      "lastRecalledAt": "2026-05-30T23:39:01.347Z",
+      "queryHashes": [
+        "1e49cd7c4f38"
+      ],
+      "recallDays": [
+        "2026-05-30"
+      ],
+      "conceptTags": [
+        "backup",
+        "backup-projects.sh",
+        "state.json",
+        "koda-portfolio/master",
+        "cron",
+        "projects.sh",
+        "mdt",
+        "status"
       ]
     }
   }
